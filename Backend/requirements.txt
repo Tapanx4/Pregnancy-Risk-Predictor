@@ -22,4 +22,5 @@ joblib
 gunicorn
 flask-Cors
 pymongo
+dotenv
 
