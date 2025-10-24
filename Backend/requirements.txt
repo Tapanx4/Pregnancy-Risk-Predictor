@@ -2,7 +2,9 @@ Flask
 Flask-Cors
 numpy
 pandas
-scikit-learn
+scikit-learn==1.6.1
+xgboost==1.7.6  # or the version you trained the model with
+
 pymongo[srv]
 python-dotenv
 joblib
