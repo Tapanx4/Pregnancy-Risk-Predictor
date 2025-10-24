@@ -20,4 +20,5 @@ lightgbm==3.3.5
 imbalanced-learn
 joblib
 gunicorn
+flask-Cors
 
