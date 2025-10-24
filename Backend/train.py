@@ -1,5 +1,5 @@
 # 1. Install packages
-!pip install xgboost lightgbm imbalanced-learn joblib
+#!pip install xgboost lightgbm imbalanced-learn joblib
 
 import pandas as pd
 import numpy as np
