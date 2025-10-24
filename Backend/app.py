@@ -11,7 +11,12 @@ from datetime import datetime
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+
+# Configure CORS
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000") # Default to localhost if not set
+CORS(app, resources={r"/predict": {"origins": FRONTEND_URL}}) 
+# You might need to allow CORS on '/' too if your frontend pings it
+# CORS(app, resources={r"/*": {"origins": FRONTEND_URL}})
 
 # --- MongoDB Connection ---
 try:
@@ -106,6 +111,12 @@ def predict():
         return jsonify({'error': 'An unexpected error occurred during prediction.'}), 500
 
 
+# --- Server Start Configuration ---
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    # Get port from environment variable or default to 5000 for local dev
+    port = int(os.environ.get('PORT', 5000))
+    # Run on 0.0.0.0 to be accessible externally (important for Render/Docker)
+    # Set debug=False for production unless FLASK_DEBUG is explicitly 'true'
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    print(f"Starting Flask app on 0.0.0.0:{port} with debug mode: {debug_mode}")
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)
