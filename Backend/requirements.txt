@@ -6,3 +6,4 @@ scikit-learn
 pymongo[srv]
 python-dotenv
 joblib
+gunicorn
