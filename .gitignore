@@ -26,13 +26,18 @@ __pycache__/
 *.sqlite3
 *.db
 *.egg-info/
-*.pkl
+
 instance/
 .env
 .env.*
 venv/
 dist/
 build/
+# Ignore all .pkl files
+*.pkl
+
+# But track the model files
+!models/*.pkl
 
 # ===============================
 # OS / Editor / Misc
