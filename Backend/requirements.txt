@@ -21,4 +21,5 @@ imbalanced-learn
 joblib
 gunicorn
 flask-Cors
+pymongo
 
