@@ -15,8 +15,9 @@ flask
 numpy==2.0.2
 scipy
 scikit-learn==1.6.1
-xgboost== 3.1.0
-lightgbm==3.3.5
+xgboost== 1.4.2
+lightgbm==4.5.0
+catboost==1.2.8
 imbalanced-learn
 joblib
 gunicorn
